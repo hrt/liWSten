@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "liWSten",
+  "version": "1",
+  "author": "Inusha",
+
+  "browser_action": {
+    "default_icon": "nomustard.png",
+    "default_title": "liWSten",
+    "default_popup": "template.html"
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+
+  "permissions": [
+    "<all_urls>",
+    "background",
+    "webNavigation",
+    "webRequest"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_start",
+      "js": ["onpageload.js"]
+    }
+  ]
+
+}
