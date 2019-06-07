@@ -5,7 +5,7 @@ function wsOnMessage(e) {
 
 document.addEventListener('wsOnMessage', wsOnMessage);
 
-function rigWebsockets() {
+function rigWebSockets() {
   var ws = window.WebSocket;
   window.WebSocket = function (a, b){
     var that = b ? new ws(a, b) : new ws(a);
@@ -28,4 +28,4 @@ function injectJS(js) {
     document.documentElement.removeChild(child)
 }
 
-injectJS(rigWebsockets);
+injectJS(rigWebSockets);
